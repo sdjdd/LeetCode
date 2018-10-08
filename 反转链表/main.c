@@ -9,8 +9,9 @@ struct ListNode {
 // 创建链表
 struct ListNode* createList(int a[], int n) {
     struct ListNode *t, *head;
+    head = NULL;
     for (int i = 0; i < n; ++i) {
-        if (i == 0) {
+        if (head == NULL) {
             head = (struct ListNode*) malloc(sizeof(struct ListNode));
             head->Val = a[i];
             head->next = NULL;
