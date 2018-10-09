@@ -3,11 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7}
-	k := 3
-	fmt.Printf("nums = %v\nk = %d\n", nums, k)
-	rotate(nums, k)
-	fmt.Println(nums)
+	tests := []struct {
+		nums []int
+		k    int
+	}{
+		{[]int{1, 2, 3, 4, 5, 6, 7}, 3},
+		{[]int{-1, -100, 3, 99}, 2},
+	}
+	for _, t := range tests {
+		fmt.Printf("%v, k = %d\n\t=> ", t.nums, t.k)
+		rotate(t.nums, t.k)
+		fmt.Println(t.nums)
+	}
 }
 
 func rotate(nums []int, k int) {

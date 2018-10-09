@@ -5,10 +5,13 @@ import (
 )
 
 func main() {
-	nums := []int{1, 1, 2}
-	fmt.Println(nums)
-	l := removeDuplicates(nums)
-	fmt.Println(nums[:l])
+	tests := [][]int{
+		[]int{1, 1, 2},
+		[]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4},
+	}
+	for _, t := range tests {
+		fmt.Printf("%v => %v\n", t, t[:removeDuplicates(t)])
+	}
 }
 
 func removeDuplicates(nums []int) int {
