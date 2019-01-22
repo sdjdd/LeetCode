@@ -23,11 +23,10 @@ class Solution:
             elif num - i > 5:
                 continue
             for hour in hours:
-                hour = str(hour) + ':'
                 for minute in minuteMap[num - i]:
                     if minute < 10:
                         minute = '0' + str(minute)
                     else:
                         minute = str(minute)
-                    result.append(hour + minute)
+                    result.append(str(hour) + ':' + minute)
         return result
